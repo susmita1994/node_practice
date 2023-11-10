@@ -1,6 +1,7 @@
 var fs=require('fs');
 var http=require('http');
 var server=http.createServer(function name(req,res) {
+    //read file 
     if (req.url=='/') {
         //Asyn 
         // fs.readFile("home.html",function(error,data) {
