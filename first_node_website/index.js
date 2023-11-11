@@ -3,23 +3,14 @@ var fs=require('fs');
 
 var server=http.createServer(function (req,res) {
     if (req.url=='/') {
-        fs.readFile('home.html',function (error,data) {
-            res.writeHead(200,{'Content-Type':'text/html'});
-            res.write(data);
-            res.end();
-        });
+        let data=fs.readFileSync('home.html','utf-8');
+        res.end(data);
     }else if (req.url=='/about') {
-        fs.readFile('about.html',function (error,data) {
-            res.writeHead(200,{'Content-Type':'text/html'});
-            res.write(data);
-            res.end();
-        });
+       let data=fs.readFileSync('about.html','utf-8');
+        res.end(data);
     }else if (req.url=='/contact') {
-        fs.readFile('contact.html',function (error,data) {
-            res.writeHead(200,{'Content-Type':'text/html'});
-            res.write(data);
-            res.end();
-        });
+        let data=fs.readFileSync('contact.html','utf-8');
+        res.end(data);
     }
 });
 
