@@ -8,8 +8,8 @@ con.connect(function (error){
     }
     else{
         console.log('connected success');
-       InsertData(con);
-       
+      // InsertData(con);
+       UpdateData(con);
     }
 });
 
@@ -21,6 +21,18 @@ function InsertData(con) {
         }
         else{
             console.log('data insert successfuly');
+        }
+    });
+}
+
+function UpdateData(con) {
+    let sql = "UPDATE student SET roll = '02' WHERE id = 2";
+    con.query(sql,function (error){
+        if (error){
+            console.log('data update fail');
+        }
+        else{
+            console.log('data update successfully');
         }
     });
 }
