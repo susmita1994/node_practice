@@ -9,7 +9,8 @@ con.connect(function (error){
     else{
         console.log('connected success');
       // InsertData(con);
-       UpdateData(con);
+       //UpdateData(con);
+       SelectData(con);
     }
 });
 
@@ -33,6 +34,17 @@ function UpdateData(con) {
         }
         else{
             console.log('data update successfully');
+        }
+    });
+}
+function SelectData(con) {
+    let sql = "SELECT * FROM studentList";
+    con.query(sql,function (error,result){
+        if (error){
+            console.log('data select fail');
+        }
+        else{
+            console.log(result);
         }
     });
 }
