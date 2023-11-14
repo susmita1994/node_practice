@@ -10,7 +10,8 @@ con.connect(function (error){
         console.log('connected success');
       // InsertData(con);
        //UpdateData(con);
-       SelectData(con);
+      // SelectData(con);
+       DeleteData(con)
     }
 });
 
@@ -45,6 +46,18 @@ function SelectData(con) {
         }
         else{
             console.log(result);
+        }
+    });
+}
+
+function DeleteData(con) {
+    let sql="DELETE FROM student WHERE id = 1";
+    con.query(sql,function (error){
+        if (error){
+            console.log('data delete fail');
+        }
+        else {
+            console.log('data delete successfully');
         }
     });
 }
