@@ -38,7 +38,7 @@ function UpdateData(con) {
     });
 }
 function SelectData(con) {
-    let sql = "SELECT * FROM studentList";
+    let sql = "SELECT * FROM student";
     con.query(sql,function (error,result){
         if (error){
             console.log('data select fail');
