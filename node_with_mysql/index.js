@@ -8,10 +8,10 @@ con.connect(function (error){
     }
     else{
         console.log('connected success');
-      // InsertData(con);
+       //InsertData(con);
        //UpdateData(con);
-      // SelectData(con);
-       DeleteData(con)
+       SelectData(con);
+      // DeleteData(con)
     }
 });
 
